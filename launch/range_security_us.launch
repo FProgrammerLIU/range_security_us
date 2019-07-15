@@ -1,0 +1,16 @@
+<launch>
+  <node pkg="range_security_us" type="ks106_fake" name="dauxi_ks106_cmd_fake" output="screen">
+  </node>
+
+  <node pkg="range_security_us" type="range_security_us_node" name="range_security_us" output="screen">
+    
+    <param name="us1_cmd_id" value="ks106_us1" type="string"/>
+    <param name="us2_cmd_id" value="ks106_us2" type="string"/>
+    <param name="us3_cmd_id" value="ks106_us3" type="string"/>
+    <param name="us4_cmd_id" value="ks106_us4" type="string"/>
+    <param name="us_min_range" type="double" value="0.30" />
+    <param name="us_cmd_pub" value="us_cmd" type="string"/>
+    <remap from="/ks106_cmd" to="/cmd_vel"/>
+  </node>
+
+</launch>
